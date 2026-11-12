@@ -1,0 +1,11 @@
+from dotenv import load_dotenv
+from google import genai
+
+load_dotenv()
+client = genai.Client()
+
+interaction = client.interactions.create(
+    model="gemini-3.5-flash-lite",
+    input="Git commit을 한 문장으로 설명해 줘",
+)
+print(interaction.output_text)
