@@ -1,0 +1,97 @@
+:root {
+  font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;
+  color: #183b5c;
+  background: #f4f7f9;
+  font-synthesis: none;
+}
+
+* { box-sizing: border-box; }
+
+body { margin: 0; }
+
+.app {
+  width: min(860px, calc(100% - 32px));
+  min-height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  padding: 48px 0 28px;
+  border-top: 7px solid #ff8d70;
+}
+
+.eyebrow {
+  color: #597287;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .08em;
+}
+
+h1 { margin: 12px 0 8px; font-size: clamp(28px, 5vw, 40px); color: #0b3d69; }
+.header p { margin: 0; color: #597287; }
+
+.chat {
+  flex: 1;
+  min-height: 360px;
+  padding: 28px;
+  background: #fff;
+  border: 1px solid #dce6ec;
+  border-radius: 18px 18px 0 0;
+  overflow-y: auto;
+}
+
+.message { max-width: 76%; margin-bottom: 22px; }
+.message.user { margin-left: auto; }
+.role { display: block; margin-bottom: 7px; color: #597287; font-size: 13px; font-weight: 700; }
+.message.user .role { text-align: right; }
+.message p {
+  margin: 0;
+  padding: 15px 18px;
+  border-radius: 14px;
+  background: #eaf1f4;
+  line-height: 1.65;
+  white-space: pre-wrap;
+}
+.message.user p { background: #0b3d69; color: white; }
+.status { color: #597287; font-size: 14px; }
+
+.composer {
+  padding: 18px 24px 24px;
+  background: #fff;
+  border: 1px solid #dce6ec;
+  border-top: 0;
+  border-radius: 0 0 18px 18px;
+  margin-bottom: 32px;
+}
+
+.composer label { display: block; margin-bottom: 8px; font-size: 14px; font-weight: 700; }
+.input-row { display: flex; gap: 10px; }
+input {
+  flex: 1;
+  min-width: 0;
+  padding: 13px 15px;
+  border: 1px solid #b8cbd5;
+  border-radius: 9px;
+  font: inherit;
+}
+input:focus { outline: 2px solid #73a2ac; outline-offset: 1px; }
+button {
+  padding: 0 22px;
+  border: 0;
+  border-radius: 9px;
+  background: #ff8d70;
+  color: #183b5c;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+button:disabled { opacity: .5; cursor: default; }
+
+@media (max-width: 560px) {
+  .header { padding-top: 30px; }
+  .chat { padding: 16px; }
+  .message { max-width: 92%; }
+  .composer { padding: 14px; }
+}
